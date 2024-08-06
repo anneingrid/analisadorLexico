@@ -71,7 +71,7 @@ def main():
         f.write(f"{'TOKEN':<6} | IDENTIFICADOR | TAMANHO | POSIÇÃO\n")
         f.write("-" * 50 + '\n')
         for token in tokens_lista:
-            f.write(f"{token[0]:<6} | {token[1]} | {len(token[1])} | ({token[2]} , {token[3]})\n")
+            f.write(f"{token[0]:<6} | {token[1]} | {len(token[0])} | ({token[2]} , {token[3]})\n")
 
     with open('simbolos.txt', 'w', encoding='utf-8') as f:
         f.write("> Tabela de símbolos\n")
