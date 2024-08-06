@@ -1,5 +1,8 @@
-> Tabela de símbolos
-índice | símbolo
-1 | i
-2 | 100
-3 | j
+Tabela de símbolos
+--------------------
+ÍNDICE  | SÍMBOLO   
+--------------------
+1       | i         
+2       | 100       
+3       | j         
+
