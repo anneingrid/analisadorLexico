@@ -1,0 +1,13 @@
+> Tokens
+token | identificação | tamanho | posição
+while | palavra reservada | 5 | 
+i | identificador | 1 | 
+< | operador | 1 | 
+100 | constante | 3 | 
+do | palavra reservada | 2 | 
+i | identificador | 1 | 
+= | operador | 1 | 
+i | identificador | 1 | 
++ | operador | 1 | 
+j | identificador | 1 | 
+; | terminador | 1 | 
