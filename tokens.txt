@@ -1,13 +1,15 @@
-> Tokens
-token | identificação | tamanho | posição
-while | palavra reservada | 5 | 
-i | identificador | 1 | 
-< | operador | 1 | 
-100 | constante | 3 | 
-do | palavra reservada | 2 | 
-i | identificador | 1 | 
-= | operador | 1 | 
-i | identificador | 1 | 
-+ | operador | 1 | 
-j | identificador | 1 | 
-; | terminador | 1 | 
+Tokens
+--------------------------------------------------
+TOKEN  | IDENTIFICADOR | TAMANHO | POSIÇÃO
+--------------------------------------------------
+while  | palavra reservada    | 5 | (0 , 0)
+i      | ['identificador', 1] | 1 | (0 , 6)
+<      | operador             | 1 | (0 , 8)
+100    | ['constante', 2]     | 3 | (0 , 10)
+do     | palavra reservada    | 2 | (0 , 14)
+i      | ['identificador', 1] | 1 | (1 , 8)
+=      | operador             | 1 | (1 , 10)
+i      | ['identificador', 1] | 1 | (1 , 12)
++      | operador             | 1 | (1 , 14)
+j      | ['identificador', 3] | 1 | (1 , 16)
+;      | terminador           | 1 | (1 , 17)
