@@ -1,9 +1,8 @@
 import re
 
 tokens = [
-    ('palavra reservada', r'\bwhile\b'),
-    ('palavra reservada', r'\bdo\b'),
-    ('operador', r'[+\-*/%&|^!~<>=]'),
+    ('palavra reservada', r'\b(?:while|do)\b'),
+    ('operador', r'[<=+]'),
     ('identificador', r'\b[i|j]\b'),
     ('constante', r'\b\d+\b'),
     ('espaco', r'\s+'),
@@ -20,11 +19,9 @@ def analisador(codigo):
 
     while pos < len(codigo):
         correspondente = None
-
         for tipo_token, padrao in tokens:
             regex = re.compile(padrao)
             correspondente = regex.match(codigo, pos)
-            
             if correspondente:
                 texto = correspondente.group(0)
                 if tipo_token != 'espaco':
@@ -71,7 +68,7 @@ def main():
         f.write(f"{'TOKEN':<6} | IDENTIFICADOR | TAMANHO | POSIÇÃO\n")
         f.write("-" * 50 + '\n')
         for token in tokens_lista:
-            f.write(f"{token[0]:<6} | {token[1]} | {len(token[0])} | ({token[2]} , {token[3]})\n")
+            f.write(f"{token[0]:<6} | {token[1]} | {len(token[0])} | ({token[2]}, {token[3]})\n")
 
     with open('simbolos.txt', 'w', encoding='utf-8') as f:
         f.write("> Tabela de símbolos\n")
