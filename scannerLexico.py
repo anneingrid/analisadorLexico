@@ -33,8 +33,7 @@ def analisador(codigo):
                         tokens_lista.append((texto, [tipo_token ,tabela_simbolos[texto]], linha, coluna))
                     else:
                         tokens_lista.append((texto, tipo_token, linha, coluna))
-                
-                # Atualizar posição, linha e coluna
+
                 for char in texto:
                     if char == '\n':
                         linha += 1
@@ -51,10 +50,8 @@ def analisador(codigo):
     
     return tokens_lista, tabela_simbolos
 
-def main():
-    codigo = """while i < 100 do
-        i = i + j;"""
-    
+def main(codigo):
+
     tokens_lista, tabela_simbolos = analisador(codigo)
 
     print(tokens_lista)
@@ -63,7 +60,7 @@ def main():
         return
     
     with open('tokens.txt', 'w', encoding='utf-8') as f:
-        f.write("> Tokens\n")
+        f.write("Tokens\n")
         f.write("-" * 50 + '\n')
         f.write(f"{'TOKEN':<6} | IDENTIFICADOR | TAMANHO | POSIÇÃO\n")
         f.write("-" * 50 + '\n')
@@ -71,14 +68,16 @@ def main():
             f.write(f"{token[0]:<6} | {token[1]} | {len(token[0])} | ({token[2]}, {token[3]})\n")
 
     with open('simbolos.txt', 'w', encoding='utf-8') as f:
-        f.write("> Tabela de símbolos\n")
+        f.write("Tabela de símbolos\n")
         f.write("-" * 20 + '\n')
         f.write(f"{'ÍNDICE':<7} | {'SÍMBOLO':<10}\n")
         f.write("-" * 20 + '\n')
         for simbolo, indice in sorted(tabela_simbolos.items(), key=lambda item: item[1]):
             f.write(f"{indice:<7} | {simbolo:<10}\n")
 
-    print("Análise léxica concluída. Tabelas geradas em 'tokens.txt' e 'simbolos.txt'.")
-
-
-main()
+    print("Análise léxica concluída.")
+    
+entrada = """while i < 100 do
+    i = i + j;"""
+    
+main(entrada)
