@@ -4,7 +4,7 @@ tokens = [
     ('palavra reservada', r'\b(?:while|do)\b'),
     ('operador', r'[<=+]'),
     ('identificador', r'\b[i|j]\b'),
-    ('constante', r'\b\d+\b'),
+    ('constante', r'\d+'),
     ('espaco', r'\s+'),
     ('terminador', r';')
 ]
